@@ -1,0 +1,23 @@
+<ActionBar title="Motif du Virement" class="ActionBarTitle">
+
+    <NavigationButton text="Go Back" icon="res://ic_arrow_back"></NavigationButton>
+    <ActionItem ios.systemIcon="2" icon="res://ic_notifications" ios.position="right"></ActionItem>
+    <ActionItem ios.systemIcon="3" icon="res://ic_account" ios.position="right"></ActionItem>
+
+</ActionBar>
+
+<StackLayout orientation="vertical">
+    <ScrollView>
+        <Label text="Veuillez entrer le motif du virement" class="texte"></Label>
+        <StackLayout [style.margin-top]="getMargin()">
+            <TextView hint="Motif De virement" [(ngModel)]="virement.motif"></TextView>
+            <StackLayout *ngIf="justificatif==1">
+                <Label text="Votre virement dépasse 200.000 DA" class="texte"></Label>
+                <Label text="Veuillez joindre un justificatif" class="texte"></Label>
+                <Image [src]="picture" stretch="aspectFill" class="myImage" horizontalAlignment="center"></Image>
+                <Button class="profile-button" text="Votre Justification" (tap)="cameraOpen()"></Button>
+            </StackLayout>
+            <Button text="Confirmer" class="submit-button" (tap)="submit()"></Button>
+        </StackLayout>
+    </ScrollView>
+</StackLayout>

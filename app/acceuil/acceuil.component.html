@@ -1,0 +1,39 @@
+<ActionBar title="" flat="true">
+  <ActionItem ios.position="left" (tap)="toggleTheMenu()" *ngIf="isIOS">
+    <Label class="mdi-actionitem mdi-menu" [text]="'mdi-hamburger' | fonticon"></Label>
+  </ActionItem>
+  <Label horizontalAlignment="left" class="mdi-actionitem mdi-menu" [text]="'mdi-hamburger' | fonticon" (tap)="toggleTheMenu()"
+    *ngIf="!isIOS"></Label>
+  <Label horizontalAlignment="center" class="semibold" text="Acceuil" *ngIf="isIOS"></Label>
+  <ActionItem ios.position="right" (tap)="showPluginInfo()">
+    <Label class="mdi-actionitem mdi-actionitem-right" [text]="'mdi-information-outline' | fonticon"></Label>
+  </ActionItem>
+</ActionBar>
+<GridLayout class="main-content">
+  <Gradient height="100%" direction="to right" colors="#dae2f8, #d6a4a4" class="p-20">
+    <ContentView [@flyInOut]="'in'" height="100%" width="100%" borderRadius="20">
+
+      <TabView [@from-bottom]="'in'" [selectedIndex]="myIndex">
+        <ng-container *ngFor="let compte of comptes; let i = index">
+
+          <StackLayout [@fade-in]="'in'" class="transparent-area" height="100%" verticalAlignment="center" width="100%" *tabItem="{title: getTitles(i)}">
+            <label *ngIf="compte.type==0" text="Compte Courant" class="TabLabel"></label>
+            <label *ngIf="compte.type==1" text="Compte Epargne" class="TabLabel"></label>
+            <label *ngIf="compte.type==2" text="Compte Euro" class="TabLabel"></label>
+            <label *ngIf="compte.type==3" text="Compte Dollar" class="TabLabel"></label>
+            <StackLayout orientation="vertical" class="card" [style.background-color]="getAccountStyle(i)">
+              <Label text="Balance Totale" class="cardTitle"></Label>
+              <Label [text]="compte.balance" class="cardTotal"></Label>
+              <Label *ngIf="compte.type== 2 || compte.type == 3" text="Taux de change" class="cardTitle"></Label>
+              <Label *ngIf="compte.type==2" text="€" class="tauxDeChange"></Label>
+              <Label *ngIf="compte.type==3" text="$" class="tauxDeChange"></Label>
+              <Button class="card-button" text="Effectuer Virement" (tap)="virement(compte.type)"></Button>
+            </StackLayout>
+          </StackLayout>
+        </ng-container>
+      </TabView>
+    </ContentView>
+  </Gradient>
+  <FAB [@from-bottom]="'in'" (tap)="fabTap()" icon="res://ic_add_white" rippleColor="#f1f1f1" class="fab-button">
+  </FAB>
+</GridLayout>

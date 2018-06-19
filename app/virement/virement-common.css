@@ -1,0 +1,76 @@
+ActionBar{
+  background-color: #F64060
+}
+
+.ActionBarTitle{
+  color: white;
+  font-family: Medium;
+  font-size: 20pt;
+}
+
+StackLayout {
+  padding-bottom: 15;
+  background-color:white;
+}
+
+Button {
+margin-left: 32;
+margin-right: 32;
+margin-top: 10;
+}
+
+.next-button {
+  background-color: #ffffff;
+  border-color: #F64060;
+  border-radius: 54px;
+  border-style: solid;
+  border-width: 2px;
+  color: #F64060;
+  margin-top: 40;
+  width: 70%
+}
+
+TextField {
+margin-left: 32;
+margin-right: 32;
+color: #444;
+border-bottom-style: solid;
+border-bottom-width: 3px;
+border-bottom-color: #FA9FAF;
+}
+
+.texte{
+  text-align: center;
+  font-family: Medium;
+  font-size: 14pt;
+  margin-top: 32px;
+  width: 78%;
+  color: black;
+}
+Label {
+  color: #444;
+  margin: 10 0;
+  margin-left: 32;
+  margin-right: 32;
+}
+
+Label.title {
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 20 0;
+}
+
+Label.disabled {
+  opacity: 0.6;
+}
+.TabTitle{color:#FAE6E9}.TabLabel{color:#F64060;text-align:center;margin-top:32px;margin-bottom:32px;font-size:20pt}
+.card{border-radius:24px;width:40%;height:40%;background-color: #FA9FAF;}
+.cardTitle{margin-top:5px;margin-left:10px;color:white;font-size:10pt}
+.cardTotal{margin-left:10px;color:white;font-size:14pt;margin-bottom:5px}
+.tauxDeChange{margin-left:28px;color:white;font-size:24pt;margin-bottom:64px}
+.card-button{background-color:transparent;border-color:white;border-radius:54px;border-style:solid;border-width:5px;color:white;width:85%;margin-top:32px}TabView{tab-text-color:#C13A4D;selected-tab-text-color:#F64060}.fab-button{height:70;width:70;margin:15;background-color:#F64060;horizontal-align:right;vertical-align:bottom}.button-success{background-color:#51ae8c}.button-info{background-color:#516a78}.button-warning{background-color:#f18b34}.button-error{background-color:#ee664c}.button-custom{background-color:#6baad8}.button-custom-alt{background-color:yellowgreen}.button-dismiss{background-color:#444}
+
+.cardStyle {
+  background-color: #FA9FAF;
+  color: rgb(248, 151, 151);
+}

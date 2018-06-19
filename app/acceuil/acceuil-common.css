@@ -1,0 +1,66 @@
+
+
+WrapLayout {
+  margin-bottom: 16;
+}
+
+button {
+  background-color: #6494AA;
+  padding: 8 10;
+  margin: 8 10 8 0;
+  font-size: 14;
+  border-radius: 4;
+  border-width: 1;
+  border-color: #fff;
+}
+
+.button {
+  color: #ffffff;
+}
+
+.button-success {
+  background-color: #51ae8c;
+}
+
+.button-info {
+  background-color: #516a78;
+}
+
+.button-warning {
+  background-color: #f18b34;
+}
+
+.button-error {
+  background-color: #ee664c;
+}
+
+.button-custom {
+  background-color: #6baad8;
+}
+
+.button-custom-alt {
+  background-color: yellowgreen;
+}
+
+.button-dismiss {
+  background-color: #444
+}
+ActionBar{background-color:#F64060}
+.ActionBarTitle{color:white;font-family:Medium;font-size:20pt}
+.TabTitle{color:#FAE6E9}
+.TabLabel{color:#F64060;text-align:center;margin-top:32px;margin-bottom:32px;font-size:20pt}
+.card{border-radius:24px;width:75%;height:80%}
+.cardTitle{margin-top:30px;margin-left:30px;color:white;font-size:20pt}
+.cardTotal{margin-left:30px;color:white;font-size:24pt;margin-bottom:14px}
+.tauxDeChange{margin-left:28px;color:white;font-size:24pt;margin-bottom:64px}
+.card-button{background-color:transparent;border-color:white;border-radius:54px;border-style:solid;border-width:5px;color:white;width:85%;margin-top:32px}
+TabView{tab-text-color:#C13A4D;selected-tab-text-color:#F64060;color: #fff;  border-color: #F64060;
+  selected-tab-background-color: rgba(255,255,255,210);}
+  
+.fab-button{
+  height: 54;
+  width: 54;
+  margin: 28;
+  background-color: #ff4081;
+  horizontal-align: right;
+  vertical-align: bottom;}

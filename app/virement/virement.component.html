@@ -1,0 +1,52 @@
+<ActionBar title="Virement Tharwa" flat="true" class="ActionBarTitle">
+
+    <NavigationButton text="Go Back" icon="res://ic_arrow_back"></NavigationButton>
+    <ActionItem ios.systemIcon="2" icon="res://ic_notifications" ios.position="right"></ActionItem>
+    <ActionItem ios.systemIcon="3" icon="res://ic_account" ios.position="right"></ActionItem>
+
+</ActionBar>
+
+
+<!--<StackLayout orientation="vertical" *ngIf="typeVirement=='Interne'">
+    <Label text="Veuillez remplir le formulaire pour completer" class="texte"></Label>
+    <Label text="l'opération du virement." class="texte"></Label>
+
+    <StackLayout style="margin-top:32px">
+        <StackLayout>
+            <ListPicker [items]="accounts" selectedIndex="1" (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker>
+        </StackLayout>
+
+        <Label [text]="balance" hint="Balance"></Label>
+        <TextField hint="Montant" [hint]="unit" keyboardType="number" [(ngModel)]="virement.montant"></TextField>
+        <Button class="next-button" text="Suivant" (tap)="Next()"></Button>
+    </StackLayout>
+
+</StackLayout>-->
+
+
+<StackLayout orientation="vertical">
+    <Label text="Virement Vers un Compte Tharwa" class="texte"></Label>
+    <StackLayout style="margin-top:32px">
+        <RadDataForm #myDataForm [source]="virementData">
+            <TKEntityProperty tkDataFormProperty name="numCompte" displayName="Numéro de Compte Tharwa" index="1" hint="e.g:THW0023DZD">
+                <TKRegExValidator tkEntityPropertyValidators regEx="THW\d{6}DZD" errorMessage="Numéro de Compte Erroné"></TKRegExValidator>
+                <TKNonEmptyValidator tkEntityPropertyValidators errorMessage="Le numéro de compte ne peut étre vide."></TKNonEmptyValidator>
+            </TKEntityProperty>
+            <TKEntityProperty tkDataFormProperty name="montant" displayName="Montant en DZD" index="2" hint="DZD">
+                <TKRangeValidator tkEntityPropertyValidators errorMessage="Le montant doit étre supérieur à 0 et inférieure à la balance"
+                    minimum="0" maximum="4000000"></TKRangeValidator>
+                <TKNonEmptyValidator tkEntityPropertyValidators errorMessage="Le montant ne peut étre vide."></TKNonEmptyValidator>
+                <TKPropertyEditor tkEntityPropertyEditor type="Number"></TKPropertyEditor>
+            </TKEntityProperty>
+        </RadDataForm>
+        <StackLayout orientation="vertical" class="card">
+            <Label text="Balance Totale" class="cardTitle"></Label>
+            <Label [text]="balance" class="cardTotal"></Label>
+            <Label text="Comission" class="cardTitle"></Label>
+            <Label [text]="comission" class="cardTotal"></Label>
+            <Label text="Balance Aprés Opération" class="cardTitle"></Label>
+            <Label [text]="liveBalance()" class="cardTotal"></Label>
+        </StackLayout>
+        <Button class="next-button" text="Suivant" (tap)="Next()"></Button>
+    </StackLayout>
+</StackLayout>
